@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" dir="ltr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>BankLoanPrediction</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #990202;">Diabetes Prediction</h1>
+        <br>
+        <h3 style="color: #02084f;">Please select from the below options to predict the Diabetes</h3>
+        <br>
+    </div>
+    <div id="container" class="container">
+        <form method="POST">{%csrf_token%}
+            
+            <input type="number" name="Plasma glucose concentration a 2 hours in an oral glucose tolerance test" id="Plasma glucose concentration a 2 hours in an oral glucose tolerance test" step="any" required value="" placeholder="Plasma glucose conc" min="0.00001"><br><br>
+            <input type="number" name="Diastolic blood pressure (mm Hg)" id="Diastolic blood pressure (mm Hg)" step="any" required value="" placeholder="Blood Pressure" min="0.00001"><br><br>
+            <input type="number" name="Triceps skin fold thickness (mm)" id="Triceps skin fold thickness (mm)" step="any" required value="" placeholder="Skin thickness" min="0.00001"><br><br>
+            <input type="number" name="2-Hour serum insulin (mu U/ml)" id="2-Hour serum insulin (mu U/ml)" step="any" required value="" placeholder="Insulin" min="0.00001"><br><br>
+            <input type="number" name="Body mass index (weight in kg/(height in m)^2)" id="Body mass index (weight in kg/(height in m)^2)" step="any" required value="" placeholder="BMI" min="0.00001"><br><br>
+            <input type="number" name="Diabetes pedigree function" id="Diabetes pedigree function" step="any" required value="" placeholder="Pedigree Function" min="0.00001"><br><br>
+            <input type="number" name="Age (years)" id="Age (years)" step="any" required value="" placeholder="Age" min="0.00001"><br><br>
+            <input type="submit" value="submit" name="submit">
+        </form>
+        <br>
+        {% if d%}
+        {%else%}
+        <label for="Loan_approved_status">Diabetes Prediction:</label>
+        <input type="text" name="" value="{{ans}}" disabled>
+        {%endif%}
+    </div>
+    
+</body>
+</html>
